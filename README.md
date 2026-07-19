@@ -59,9 +59,9 @@ server. On success the client logs the public URL, e.g.
 
 ## Notes / production hardening not yet included
 
-- Client uses `ssh.InsecureIgnoreHostKey()` — pin the server's host key
+- Client uses `ssh.InsecureIgnoreHostKey()` pin the server's host key
   fingerprint before shipping this to real users.
-- No TLS termination — put this behind a reverse proxy (Caddy/nginx) or add
+- No TLS termination, put this behind a reverse proxy (Caddy/nginx) or add
   `crypto/tls` directly on the HTTP router listener for real HTTPS.
 - No rate limiting, connection caps, or bandwidth quotas per tunnel.
 - Host key is regenerated on every server restart; persist it to disk if you
